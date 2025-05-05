@@ -46,7 +46,7 @@ This lab consists of four virtual machines configured within a VirtualBox NAT ne
 
 *Ref: A table displaying all four virtual machines’ network assignments*
 
-> Add a network diagram here to visualise the architecture.  
+> Add a network diagram here
 > *Ref A: Network diagram showing VM connections and NAT configuration*
 
 ---
