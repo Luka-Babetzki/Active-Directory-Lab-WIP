@@ -1,31 +1,63 @@
 # Active-Directory-Lab
 
 ## Objective
-[Brief Objective - Remove this afterwards]
 
-The Detection Lab project aimed to establish a controlled environment for simulating and detecting cyber attacks. The primary focus was to ingest and analyse logs within a Security Information and Event Management (SIEM) system, generating test telemetry to mimic real-world attack scenarios. This hands-on experience was designed to deepen understanding of network security, attack patterns, and defensive strategies.
+The Active Directory Lab project aimed to establish a controlled virtual environment to simulate and analyse Windows domain-based networks. The primary focus was to implement Active Directory Domain Services (AD DS), monitor event logs within a Security Information and Event Management (SIEM) system (Splunk), and generate test telemetry mimicking real-world attack scenarios using tools like Atomic Red Team. This hands-on project deepened understanding of enterprise-level authentication systems, attack detection, and defensive strategies.
 
 ### Skills Learned
-[Bullet Points - Remove this afterwards]
 
-- Advanced understanding of SIEM concepts and practical application.
-- Proficiency in analysing and interpreting network logs.
-- Ability to generate and recognise attack signatures and patterns.
-- Enhanced knowledge of network protocols and security vulnerabilities.
-- Development of critical thinking and problem-solving skills in cybersecurity.
+- Configuring and managing Active Directory environments  
+- Deploying and utilising SIEM for log collection and analysis  
+- Simulating adversarial techniques in a controlled lab  
+- Critical thinking and troubleshooting in cybersecurity scenarios  
 
 ### Tools Used
-[Bullet Points - Remove this afterwards]
 
-- Security Information and Event Management (SIEM) system for log ingestion and analysis.
-- Network analysis tools (such as Wireshark) for capturing and examining network traffic.
-- Telemetry generation tools to create realistic network traffic and attack scenarios.
+- **Splunk** – for ingesting and analysing Windows event logs  
+- **Atomic Red Team** – for simulating attack techniques (MITRE ATT&CK)  
+- **VirtualBox** – as the hypervisor to host all virtual machines  
+- **Windows Server 2022, Windows 10, Ubuntu Server, Kali Linux** – for simulating enterprise and attack infrastructure  
+
+---
 
 ## Steps
-drag & drop screenshots here or use imgur and reference them using imgsrc
 
-Every screenshot should have some text explaining what the screenshot is about.
+### 1. Overview
 
-Example below.
+This lab consists of four virtual machines configured within a VirtualBox NAT network:
 
-*Ref 1: Network Diagram*
+| Machine              | Tools               |
+|----------------------|---------------------|
+| Ubuntu Server        | Splunk (SIEM)       |
+| Windows Server 2022  | AD DS               |
+| Windows 10           | Splunk Forwarder    |
+| Kali Linux           | Atomic Red Team     |
+
+*Ref: A table displaying all four virtual machines and their associated tooling*
+
+**Network Configuration:**
+
+| Machine              | IP Address | Subnet           | Default Gateway  |
+|----------------------|------------|------------------|------------------|
+| Ubuntu Server        | 192.168.x.x| 192.168.10.0/24  | 192.168.10.1     |
+| Windows Server 2022  | 192.168.x.x| 192.168.10.0/24  | 192.168.10.1     |
+| Windows 10           | 192.168.x.x| 192.168.10.0/24  | 192.168.10.1     |
+| Kali Linux           | 192.168.x.x| 192.168.10.0/24  | 192.168.10.1     |
+
+*Ref: A table displaying all four virtual machines’ network assignments*
+
+> Add a network diagram here to visualise the architecture.  
+> *Ref A: Network diagram showing VM connections and NAT configuration*
+
+---
+
+### 2. Installing & Configuring Virtual Machines
+
+Each machine was installed and configured as follows:
+
+- **Ubuntu Server** – Installed Splunk for log ingestion and dashboard setup  
+- **Windows Server 2022** – Installed Active Directory Domain Services (AD DS) and promoted to Domain Controller  
+- **Windows 10** – Joined the domain and had Splunk Universal Forwarder installed for log shipping  
+- **Kali Linux** – Used to run Atomic Red Team scripts to simulate attack scenarios  
+
+Assumes VirtualBox is already installed on the host (Windows 11).
