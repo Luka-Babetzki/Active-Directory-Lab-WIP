@@ -20,9 +20,7 @@ The Active Directory Lab project aimed to establish a controlled virtual environ
 
 ---
 
-## Steps
-
-### 1. Overview
+## 1). Overview
 
 This lab consists of four virtual machines configured within a VirtualBox NAT network:
 
@@ -49,9 +47,7 @@ This lab consists of four virtual machines configured within a VirtualBox NAT ne
 > Add a network diagram here
 > *Ref A: Network diagram showing VM connections and NAT configuration*
 
----
-
-### 2. Installing & Configuring Virtual Machines
+## 2). Installing & Configuring Virtual Machines
 
 Each machine was installed and configured as follows:
 
